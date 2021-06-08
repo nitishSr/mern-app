@@ -11,7 +11,9 @@ A simple todo list application built with MERN stack
 - Create a collection with any name you want in MongoDB
 - Node js should be installed
 
-In order to use the project locally, follow the below steps
+### Running the app locally
+
+  In order to use the project locally, follow the below steps -
 
 - Get your connection string for MongoDB
 - Create a .env file in the root directory of project
@@ -20,7 +22,7 @@ In order to use the project locally, follow the below steps
   ```
     cd ~/todos-list
 
-    touch .env
+    Create new file named .env
 
     DB_HOST='your_db_connection_string_with_username_and_password'
   ```
@@ -35,7 +37,7 @@ In order to use the project locally, follow the below steps
     npm run dev
   ```
 
-- Start the react frond end
+- Start the react front end
 
   ```
     cd ~/todos-list/
