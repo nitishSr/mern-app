@@ -18,7 +18,7 @@
   "scripts": {
     "build": "npm run build",
     "install-client": "npm install",
-    "heroku-postbuild": "npm install-client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "backend": "cd backend && npm install && nodemon app.js",
     "develop": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run start --prefix client\""
