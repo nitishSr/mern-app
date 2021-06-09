@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
 require("dotenv").config({ path: __dirname + "/../.env" });
+const proxy = require('http-proxy-middleware');
 
 const app = express();
 
@@ -41,7 +42,12 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-  
+
+  module.exports = function(app) {
+    app.use(proxy('/api/**', { target: 'http://localhost:8082' }));
+    app.use(proxy('/otherApi/**', { target: 'http://localhost:8082' }));
+};
+
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../build')))
 
